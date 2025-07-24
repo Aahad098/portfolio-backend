@@ -29,11 +29,12 @@ SECRET_KEY = os.getenv("SECRET_KEY", "fallback-secret")
 DEBUG = os.getenv("DEBUG") == "True"
 RENDER = os.getenv("RENDER") == "True"
 
-ALLOWED_HOSTS = [ "myportfolio-backend-g56l.onrender.com",
-    "localhost",
-    "127.0.0.1"]
 
-
+ALLOWED_HOSTS = [
+    'myportfolio-backend-g56l.onrender.com',
+    'localhost',
+    '127.0.0.1',
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5500",
+    "https://my-portfolio-theta-drab-72.vercel.app",
 ]
 
 MIDDLEWARE = [
@@ -145,3 +147,4 @@ MIDDLEWARE = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+CORS_ALLOW_ALL_ORIGINS = True  

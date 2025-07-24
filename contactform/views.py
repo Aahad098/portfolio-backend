@@ -17,8 +17,9 @@ def submit_contact(request):
                 email=data.get('email'),
                 message=data.get('message')
             )
-            return JsonResponse({"success": True})
+            return JsonResponse({"success": True}, status=201)
+
         except Exception as e:
-            return JsonResponse({"success": False, "error": str(e)})
-    
-    return JsonResponse({"success": False, "error": "Only POST method allowed"})
+            return JsonResponse({"success": False, "error": str(e)}, status=400)
+
+    return JsonResponse({"success": False, "error": "Only POST method allowed"}, status=405)
